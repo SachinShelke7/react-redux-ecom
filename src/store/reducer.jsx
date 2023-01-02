@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  name: "initial action.value",
-  data: "",
+  name: "STORE",
 };
 
 export const testSlice = createSlice({
@@ -12,12 +11,9 @@ export const testSlice = createSlice({
     changeName: (state, action) => {
       state.name = action.payload;
     },
-    dataChange: (state, action) => {
-      state.data = action.payload;
-    },
   },
 });
 
-export const { changeName, dataChange } = testSlice.actions;
+export const { changeName } = testSlice.actions;
 
 export default testSlice.reducer;
