@@ -23,18 +23,32 @@ const Navbar = ({ title }) => {
 
   return (
     <div
-      className={`w-full fixed z-[999] transform transition-all duration-[500ms] bg-opacity-5 backdrop-blur-[6px] ${
-        scroll ? "bg-white text-gray-700" : "bg-transparent"
+      className={`w-full fixed z-[999] transform transition-all duration-[800ms] bg-opacity-5 text-xs sm:text-sm md:text-base ${
+        scroll
+          ? "bg-white text-gray-800 backdrop-blur-[6px]"
+          : "bg-transparent text-gray-400"
       }`}
     >
-      <div className="py-[10px] px-[30px] flex justify-between items-center">
+      <div className="py-[10px] md:px-[30px] flex justify-center md:justify-between items-center">
         {/* left */}
-        <div className="flex gap-5 items-center w-1/3">
-          <div>
+        <div className="gap-5 items-center w-1/3 hidden lg:flex">
+          <div className="flex items-center space-x-1 cursor-pointer">
+            <img
+              src="/img/in.png"
+              alt="flag"
+              className="saturate-200 w-5 h-5"
+            />
             <MdKeyboardArrowDown />
           </div>
+
           <div>
-            <MdKeyboardArrowDown />
+            <select
+              className={`bg-transparent text-sm rounded-lg w-full p-2.5 outline-none  ${
+                scroll ? "text-gray-900" : "text-gray-600"
+              }`}
+            >
+              <option value="IN">INR</option>
+            </select>
           </div>
           <div>
             <Link to="/products/1">Women</Link>
@@ -54,7 +68,7 @@ const Navbar = ({ title }) => {
         </div>
 
         {/* right */}
-        <div>
+        <div className="hidden md:block">
           <div className="flex gap-5 items-center">
             <div>
               <Link to="/">Homepage</Link>
