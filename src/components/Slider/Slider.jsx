@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 const array = [
-  "https://image.dummyjson.com/800x600/?text=1",
-  "https://image.dummyjson.com/800x600/?text=2",
-  "https://image.dummyjson.com/800x600/?text=3",
-  "https://image.dummyjson.com/800x600/?text=4",
+  "https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+  "https://images.unsplash.com/photo-1598971861713-54ad16a7e72e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1376&q=80",
 ];
 
 const Slider = () => {
@@ -32,10 +30,9 @@ const Slider = () => {
           return (
             <img
               key={index}
-              // src={item}
-              src="/img/in.png"
+              src={item}
               alt="img"
-              className="w-screen h-[90vh] object-cover transform transition-all duration-[400ms] opacity-20"
+              className="w-screen h-[90vh] object-cover transform transition-all duration-[400ms]"
             />
           );
         })}
