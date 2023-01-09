@@ -18,7 +18,7 @@ const Slider = () => {
   };
 
   return (
-    <div className=" h-[95vh] overflow-hidden scrollbar-hide select-none">
+    <div className="max-h-[500px] overflow-hidden scrollbar-hide select-none relative">
       <div
         className="flex transform transition-all duration-[1000ms] ease-in-out"
         style={{
@@ -32,25 +32,25 @@ const Slider = () => {
               key={index}
               src={item}
               alt="img"
-              className="w-screen h-[90vh] object-cover transform transition-all duration-[400ms]"
+              className="w-full max-w-[1536px] h-[500px] object-cover transform transition-all duration-[400ms]"
             />
           );
         })}
       </div>
 
       {/* icon */}
-      <div className="absolute bottom-20 left-0 right-0 mx-auto w-full flex justify-center space-x-2">
+      <div className="absolute bottom-5 left-0 right-0 mx-auto w-full flex justify-center space-x-2">
         <div
-          className="border border-gray-200 hover:border-white p-3 rounded-md cursor-pointer"
+          className="border border-gray-200 hover:border-white p-3 rounded-md cursor-pointer bg-white hover:opacity-100 opacity-70"
           onClick={handlePrev}
         >
-          <BsArrowLeft color="white" />
+          <BsArrowLeft color="black" />
         </div>
         <div
-          className="border border-gray-200 hover:border-white p-3 rounded-md cursor-pointer"
+          className="border border-gray-200 hover:border-white p-3 rounded-md cursor-pointer bg-white hover:opacity-100 opacity-70"
           onClick={handleNext}
         >
-          <BsArrowRight color="white" />
+          <BsArrowRight color="black" />
         </div>
       </div>
     </div>

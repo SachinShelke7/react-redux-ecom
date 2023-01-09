@@ -5,10 +5,10 @@ import { useSelector } from "react-redux";
 const FeaturedProducts = ({ type }) => {
   const products = useSelector((state) => state.product.products);
   return (
-    <div className="mx-32 py-10">
-      <div className="flex justify-between">
+    <div className="mx-5 lg:mx-32 py-10">
+      <div className="flex flex-col gap-2 md:gap-0 md:flex-row justify-between">
         <h1 className="capitalize font-semibold">{type} Products</h1>
-        <p className="w-1/2 text-sm">
+        <p className="md:w-1/2 text-sm">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi natus
           distinctio quas numquam temporibus quibusdam aspernatur, corrupti.
         </p>

@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Categories = () => {
   return (
-    <div className="mx-32 bg-gray-50 m-5 text-white">
-      <div className="grid grid-cols-4 grid-rows-2 gap-1">
+    <div className="lg:mx-32 m-5 text-white">
+      <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-1 md:max-h-[350px]">
         <div className="overflow-hidden relative">
           <img
             src="https://images.unsplash.com/photo-1672907867893-1a6fbfe70bf4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
@@ -18,7 +18,7 @@ const Categories = () => {
           </div>
         </div>
 
-        <div className="row-span-2 overflow-hidden relative">
+        <div className="md:row-span-2 overflow-hidden relative">
           <img
             src="https://images.unsplash.com/photo-1601217813079-53cb0303bb68?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwxMTY2MjIxMnx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=700&q=60"
             alt="img"
@@ -66,7 +66,7 @@ const Categories = () => {
             </button>
           </div>
         </div>
-        <div className="col-span-2 overflow-hidden relative">
+        <div className="md:col-span-2 overflow-hidden relative">
           <img
             src="https://images.unsplash.com/photo-1464278860589-b2ed64f87e22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTd8NzY2OTU2fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
             alt="img"

@@ -23,10 +23,10 @@ const Navbar = ({ title }) => {
 
   return (
     <div
-      className={`w-full fixed z-[999] transform transition-all duration-[800ms] bg-opacity-20 text-xs sm:text-sm md:text-base ${
+      className={`w-full transform transition-all duration-[800ms]  text-xs sm:text-sm md:text-base 2xl:max-w-[1536px] 2xl:mx-auto ${
         scroll
-          ? "bg-white text-black backdrop-blur-[6px]"
-          : "bg-transparent text-white"
+          ? "bg-white text-black backdrop-blur-[6px] shadow-md bg-opacity-70 fixed z-[999]"
+          : "bg-white"
       }`}
     >
       <div className="py-[10px] md:px-[30px] flex justify-center md:justify-between items-center">

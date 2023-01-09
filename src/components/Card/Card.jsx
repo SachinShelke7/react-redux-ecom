@@ -8,13 +8,13 @@ const Card = ({ item }) => {
         <div className="w-full h-[200px] relative">
           <img
             src={item.img}
-            alt=""
+            alt="img1"
             className="absolute z-10 hover:z-0 object-cover w-full h-44"
           />
           <img
             src={item.img2}
-            alt=""
-            className="absolute z-0 hover:z-10 object-cover w-full h-44"
+            alt="img2"
+            className="absolute z-10 object-cover w-full h-44 opacity-0 hover:opacity-100 transform transition-all duration-[1000ms]"
           />
           {item.isNew ? (
             <div className="z-20 absolute top-1 left-1 bg-white border border-green-600 text-green-600 px-1 rounded-md text-xs">
