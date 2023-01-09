@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   MdKeyboardArrowDown,
   MdSearch,
@@ -9,26 +9,8 @@ import {
 import { Link } from "react-router-dom";
 
 const Navbar = ({ title }) => {
-  const [scroll, setScroll] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 10) {
-        setScroll(true);
-      } else {
-        setScroll(false);
-      }
-    });
-  });
-
   return (
-    <div
-      className={`w-full transform transition-all duration-[800ms]  text-xs sm:text-sm md:text-base 2xl:max-w-[1536px] 2xl:mx-auto ${
-        scroll
-          ? "bg-white text-black backdrop-blur-[6px] shadow-md bg-opacity-70 fixed z-[999]"
-          : "bg-white"
-      }`}
-    >
+    <div className="w-full text-xs sm:text-sm md:text-base 2xl:max-w-[1536px] 2xl:mx-auto select-none">
       <div className="py-[10px] md:px-[30px] flex justify-center md:justify-between items-center">
         {/* left */}
         <div className="gap-5 items-center w-1/3 hidden lg:flex">
@@ -42,11 +24,7 @@ const Navbar = ({ title }) => {
           </div>
 
           <div>
-            <select
-              className={`bg-transparent text-sm rounded-lg w-full p-2.5 outline-none  ${
-                scroll ? "text-gray-900" : "text-gray-600"
-              }`}
-            >
+            <select className="bg-transparent text-sm rounded-lg w-full p-2.5 outline-none">
               <option value="IN">INR</option>
             </select>
           </div>

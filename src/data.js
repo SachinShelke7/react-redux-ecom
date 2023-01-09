@@ -1,6 +1,6 @@
 export const footerData = [
   {
-    title: "categories",
+    title: "Categories",
     sub: ["Women", "Men", "Shoes", "Accessories", "New Arrivals"],
   },
   { title: "Links", sub: ["FAQ", "Pages", "Stores", "Compare", "Cookies"] },

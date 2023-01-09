@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import List from "../../components/List/List";
 
@@ -6,6 +6,10 @@ const Products = () => {
   const [value, setValue] = useState(1000);
   const catId = parseInt(useParams().id);
   const [sort, setSort] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="flex">
