@@ -13,7 +13,7 @@ const Categories = () => {
           />
           <div className="flex justify-center items-center h-full">
             <button className="absolute top-[50%] z-10 btn">
-              <Link to="/product/1">Sale</Link>
+              <Link to="/products/1">Sale</Link>
             </button>
           </div>
         </div>
@@ -26,7 +26,7 @@ const Categories = () => {
           />
           <div className="flex justify-center items-center h-full">
             <button className="absolute top-[50%] z-10 btn">
-              <Link to="/product/1">New Season</Link>
+              <Link to="/products/2">New Season</Link>
             </button>
           </div>
         </div>
@@ -38,7 +38,7 @@ const Categories = () => {
           />
           <div className="flex justify-center items-center h-full">
             <button className="absolute top-[50%] z-10 btn">
-              <Link to="/product/1">Men</Link>
+              <Link to="/products/3">Men</Link>
             </button>
           </div>
         </div>
@@ -50,7 +50,7 @@ const Categories = () => {
           />
           <div className="flex justify-center items-center h-full">
             <button className="absolute top-[50%] z-10 btn">
-              <Link to="/product/1">Accessories</Link>
+              <Link to="/products/4">Accessories</Link>
             </button>
           </div>
         </div>
@@ -62,7 +62,7 @@ const Categories = () => {
           />
           <div className="flex justify-center items-center h-full">
             <button className="absolute top-[50%] z-10 btn">
-              <Link to="/product/1">Women</Link>
+              <Link to="/products/5">Women</Link>
             </button>
           </div>
         </div>
@@ -74,7 +74,7 @@ const Categories = () => {
           />
           <div className="flex justify-center items-center h-full">
             <button className="absolute top-[50%] z-10 btn">
-              <Link to="/product/1">Shoes</Link>
+              <Link to="/products/6">Shoes</Link>
             </button>
           </div>
         </div>
