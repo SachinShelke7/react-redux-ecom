@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   MdKeyboardArrowDown,
   MdSearch,
@@ -7,10 +7,12 @@ import {
   MdShoppingCart,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
+import Cart from "../Cart/Cart";
 
 const Navbar = ({ title }) => {
+  const [open, setOpen] = useState(false);
   return (
-    <div className="w-full text-xs sm:text-sm md:text-base 2xl:max-w-[1536px] 2xl:mx-auto select-none">
+    <div className="w-full text-xs sm:text-sm md:text-base 2xl:max-w-[1536px] 2xl:mx-auto select-none shadow-lg">
       <div className="py-[10px] md:px-[30px] flex justify-center md:justify-between items-center">
         {/* left */}
         <div className="gap-5 items-center w-1/3 hidden lg:flex">
@@ -64,7 +66,10 @@ const Navbar = ({ title }) => {
               <MdSearch />
               <MdPersonOutline />
               <MdFavoriteBorder />
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => setOpen(!open)}
+              >
                 <MdShoppingCart />
                 <span className="bg-green-600 text-white text-xs rounded-full px-1 absolute top-[-10px] right-[-10px]">
                   0
@@ -74,6 +79,7 @@ const Navbar = ({ title }) => {
           </div>
         </div>
       </div>
+      {open ? <Cart /> : null}
     </div>
   );
 };

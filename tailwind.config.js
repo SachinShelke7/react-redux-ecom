@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         oxygen: ["Oxygen", "sans-serif"],
         antonio: ["Antonio", "sans-serif"],
+        quicksand: ["Quicksand", "sans-serif"],
       },
     },
   },

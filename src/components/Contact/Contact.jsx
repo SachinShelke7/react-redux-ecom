@@ -9,7 +9,7 @@ import {
 
 const Contact = () => {
   return (
-    <div className="bg-gray-600 text-white h-12 flex justify-center items-center gap-20 my-10">
+    <div className="bg-gray-600 text-white md:h-12 flex flex-col md:flex-row justify-center items-center py-5 md:py-0 gap-5 md:gap-20 my-10">
       <div>
         <h3 className="text-sm">BE IN TOUCH WITH US:</h3>
       </div>

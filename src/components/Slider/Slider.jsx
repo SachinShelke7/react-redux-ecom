@@ -3,7 +3,8 @@ import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 const array = [
   "https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-  "https://images.unsplash.com/photo-1598971861713-54ad16a7e72e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1376&q=80",
+  "https://plus.unsplash.com/premium_photo-1661764072587-0050cc57ac17?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+  "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=894&q=80",
 ];
 
 const Slider = () => {
@@ -32,7 +33,7 @@ const Slider = () => {
               key={index}
               src={item}
               alt="img"
-              className="w-full max-w-[1536px] h-[500px] object-cover transform transition-all duration-[400ms]"
+              className="w-screen max-w-[1536px] h-screen max-h-[500px] object-cover transform transition-all duration-[400ms]"
             />
           );
         })}
