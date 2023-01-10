@@ -16,22 +16,18 @@ const Product = () => {
         {/* first */}
         <div className="flex gap-5">
           <div className="w-32 h-32 object-cover space-y-5">
-            <img
-              src={image[0]}
-              alt=""
-              className={`transform transition-all duration-[1000ms] cursor-pointer ${
-                selectedImage === 0 ? "opacity-100" : "opacity-50"
-              }`}
-              onClick={() => setSelectedImage(0)}
-            />
-            <img
-              src={image[1]}
-              alt=""
-              className={`transform transition-all duration-[1000ms] cursor-pointer ${
-                selectedImage === 1 ? "opacity-100" : "opacity-50"
-              }`}
-              onClick={() => setSelectedImage(1)}
-            />
+            {image.map((item, index) => {
+              return (
+                <img
+                  src={item}
+                  alt=""
+                  className={`transform transition-all duration-[1000ms] cursor-pointer ${
+                    selectedImage === index ? "opacity-100" : "opacity-50"
+                  }`}
+                  onClick={() => setSelectedImage(index)}
+                />
+              );
+            })}
           </div>
           <div>
             <img
