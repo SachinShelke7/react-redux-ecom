@@ -5,12 +5,19 @@ import {
   MdPersonOutline,
   MdFavoriteBorder,
   MdShoppingCart,
+  MdLightMode,
+  MdDarkMode,
 } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Cart from "../Cart/Cart";
+import { toggleMode } from "../../redux/themeSlice";
 
 const Navbar = ({ title }) => {
   const [open, setOpen] = useState(false);
+  const darkMode = useSelector((state) => state.theme.mode);
+  const dispatch = useDispatch();
+
   return (
     <div className="w-full text-xs sm:text-sm md:text-base 2xl:max-w-[1536px] 2xl:mx-auto select-none shadow-lg">
       <div className="py-[10px] md:px-[30px] flex justify-center md:justify-between items-center">
@@ -60,7 +67,9 @@ const Navbar = ({ title }) => {
               <Link to="/contact">Contact</Link>
             </div>
             <div>
-              <Link to="/stores">Stores</Link>
+              <Link to="/stores" className="secondaryText secondaryBg">
+                Stores
+              </Link>
             </div>
             <div className="flex gap-5">
               <MdSearch />
@@ -75,6 +84,9 @@ const Navbar = ({ title }) => {
                   0
                 </span>
               </div>
+              <button onClick={() => dispatch(toggleMode())}>
+                {darkMode ? <MdLightMode /> : <MdDarkMode />}
+              </button>
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 .btn {
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -25,7 +26,13 @@
 }
 
 @layer components {
-  * {
+  :root {
     @apply font-quicksand;
+  }
+  * {
+    @apply transition-colors duration-[50ms];
+  }
+  .dark {
+    @apply bg-[#23272f] text-[#f6f7f9];
   }
 }
