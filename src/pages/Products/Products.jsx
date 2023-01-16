@@ -27,9 +27,7 @@ const Products = () => {
         : selectedCategories.filter((item) => item !== value)
     );
   };
-  console.log(selectedCategories);
 
-  // console.log("data", data);
   return (
     <div className="flex">
       {/* first */}

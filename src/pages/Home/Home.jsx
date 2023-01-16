@@ -7,11 +7,11 @@ import Slider from "../../components/Slider/Slider";
 const Home = () => {
   return (
     <>
-      <Slider />
+      {/* <Slider /> */}
       <FeaturedProducts type="featured" />
-      <Categories />
+      {/* <Categories /> */}
       <FeaturedProducts type="trending" />
-      <Contact />
+      {/* <Contact /> */}
     </>
   );
 };
