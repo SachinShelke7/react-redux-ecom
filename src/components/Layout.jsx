@@ -4,7 +4,7 @@ import { Navbar, Footer } from "./";
 const Layout = () => {
   return (
     <div className="flex flex-col min-h-screen 2xl:max-w-[1536px] 2xl:mx-auto">
-      <Navbar title="STORE" />
+      <Navbar title="VS-CART" />
       <div className="flex-1">
         <Outlet />
       </div>

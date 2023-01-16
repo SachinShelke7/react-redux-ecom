@@ -1,55 +1,52 @@
 import React, { useEffect, useState } from "react";
 import { MdAddShoppingCart, MdCompare, MdFavoriteBorder } from "react-icons/md";
+import { useParams } from "react-router-dom";
+import useFetch from "../../hooks/useFetch";
 
 const Product = () => {
-  const [selectedImage, setSelectedImage] = useState(0);
+  const id = useParams().id;
+  const [selectedImage, setSelectedImage] = useState("img");
   const [quantity, setQuantity] = useState(1);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const image = [
-    "https://images.pexels.com/photos/1667088/pexels-photo-1667088.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-  ];
+  const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
+
   return (
     <div className="mx-5 md:mx-14 py-5 flex gap-2">
       <div className="flex flex-col md:flex-row gap-5">
         {/* first */}
         <div className="flex gap-5 flex-1">
           <div className="w-36 h-36 object-cover space-y-5">
-            {image.map((item, index) => {
-              return (
-                <img
-                  key={index}
-                  src={item}
-                  alt=""
-                  className={`transform transition-all duration-[1000ms] cursor-pointer ${
-                    selectedImage === index ? "opacity-100" : "opacity-50"
-                  }`}
-                  onClick={() => setSelectedImage(index)}
-                />
-              );
-            })}
+            <img
+              src={`http://localhost:1337${data?.attributes?.img?.data?.attributes?.url}`}
+              alt=""
+              className={`transform transition-all duration-[1000ms] cursor-pointer  h-1/2 object-contain`}
+              onClick={() => setSelectedImage("img")}
+            />
+            <img
+              src={`http://localhost:1337${data?.attributes?.img2?.data?.attributes?.url}`}
+              alt=""
+              className={`transform transition-all duration-[1000ms] cursor-pointer  h-1/2 object-contain`}
+              onClick={() => setSelectedImage("img2")}
+            />
           </div>
           <div>
             <img
-              src={image[selectedImage]}
+              src={`http://localhost:1337${data?.attributes?.[selectedImage]?.data?.attributes?.url}`}
               alt=""
-              className="w-[35rem] object-cover"
+              className="w-[35rem] h-96 object-contain"
             />
           </div>
         </div>
+
         {/* second */}
         <div className="flex-1">
-          <h1 className="font-bold text-xl">Title</h1>
-          <span className="font-bold">1499</span>
-          <p className="text-sm md:max-w-[80%]">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Consequatur autem beatae, quis necessitatibus dolorum labore nam
-            maiores possimus quas repellat fugiat laboriosam dolore atque
-            distinctio fugit. Corporis ipsa at quos.
-          </p>
+          <h1 className="font-bold text-xl">{data?.attributes?.title}</h1>
+          <span className="font-bold">{data?.attributes?.price}</span>
+          <p className="text-sm md:max-w-[80%]">{data?.attributes?.desc}</p>
           <div className="mt-3">
             <button
               onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}

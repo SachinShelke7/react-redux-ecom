@@ -1,34 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Card = ({ item }) => {
+const Card = ({ item, id }) => {
   return (
-    <Link to={`/product/${item.id}`}>
+    <Link to={`/product/${id}`}>
       <div className="pt-10">
         <div className="w-full h-[200px] relative">
           <img
-            src={item.img}
+            src={`http://localhost:1337${item?.img?.data?.attributes?.url}`}
             alt="img1"
             className="absolute z-10 hover:z-0 object-cover w-full h-44"
           />
           <img
-            src={item.img2}
+            src={`http://localhost:1337${item?.img2?.data?.attributes?.url}`}
             alt="img2"
             className="absolute z-10 object-cover w-full h-44 opacity-0 hover:opacity-100 transform transition-all duration-[1000ms]"
           />
-          {item.isNew ? (
+          {item?.isNew ? (
             <div className="z-20 absolute top-1 left-1 bg-white border border-green-600 text-green-600 px-1 rounded-md text-xs">
               New
             </div>
           ) : null}
         </div>
-        <h2 className="text-sm font-semibold">{item.title}</h2>
+        <h2 className="text-sm font-semibold">{item?.title}</h2>
         <div>
           <h3 className="font-semibold">
             <span className="text-gray-500 line-through text-xs pr-1">
-              ₹{item.oldPrice}
+              ₹{item?.oldPrice}
             </span>
-            ₹{item.price}
+            ₹{item?.price}
           </h3>
         </div>
       </div>
