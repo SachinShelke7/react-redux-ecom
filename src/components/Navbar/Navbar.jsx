@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   MdKeyboardArrowDown,
   MdSearch,
@@ -19,11 +19,18 @@ const Navbar = ({ title }) => {
   const darkMode = useSelector((state) => state.theme.mode);
   const dispatch = useDispatch();
   const [menu, setMenu] = useState(false);
+  const [test, setTest] = useState(true);
+  useEffect(() => {
+    setTest(true);
+    setTimeout(() => {
+      setTest(false);
+    }, 500);
+  }, []);
 
   return (
     <div
-      className={`w-full text-xs sm:text-sm md:text-base 2xl:max-w-[1536px] 2xl:mx-auto select-none shadow-lg transform transition-all duration-[500ms] overflow-hidden ${
-        menu ? "h-40 border-b border-gray-600" : "h-14"
+      className={`w-full text-xs sm:text-sm md:text-base 2xl:max-w-[1536px] 2xl:mx-auto select-none shadow-lg transform transition-all duration-[300ms] overflow-hidden ${
+        menu ? "h-40 md:h-14 border-b border-gray-600" : "h-14"
       }`}
     >
       <button
@@ -36,7 +43,13 @@ const Navbar = ({ title }) => {
       <div className="py-[10px] md:px-[30px] flex flex-col md:flex-row  md:gap-0 justify-center md:justify-between items-center">
         {/* left */}
         <div className="flex flex-col-reverse md:flex-row gap-2 md:gap-0 justify-center md:justify-between w-1/2 items-center">
-          <div className="gap-5 items-center md:w-1/3 flex">
+          <div
+            className={`gap-5 items-center md:w-1/3 flex transform transition-all duration-[1000ms] ${
+              menu
+                ? "translate-y-0 translate-x-0"
+                : "translate-y-[200%] md:translate-y-0 -translate-x-40 md:translate-x-0"
+            }`}
+          >
             <div className="flex items-center space-x-1 cursor-pointer">
               <img
                 src="/img/in.png"
@@ -62,14 +75,26 @@ const Navbar = ({ title }) => {
             </div>
           </div>
           {/* center */}
-          <div>
+          <div
+            className={`transform transition-all duration-[1000ms] ${
+              test
+                ? "-translate-x-[1000%] opacity-0 text-white"
+                : "translate-x-0 opacity-100"
+            }`}
+          >
             <h2 className="text-2xl font-bold font-antonio">
               <Link to="/">{title ? title : "Error"}</Link>
             </h2>
           </div>
         </div>
         {/* right */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-5">
+        <div
+          className={`flex flex-col md:flex-row items-center justify-center gap-5 transform transition-all duration-[1000ms] ${
+            menu
+              ? "translate-y-0 translate-x-0"
+              : "translate-y-[200%] md:translate-y-0 translate-x-40 md:translate-x-0 "
+          }`}
+        >
           {/* <div className="hidden md:block"> */}
           <div className="flex gap-5 items-center">
             <div>

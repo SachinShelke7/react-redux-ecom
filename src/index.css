@@ -36,3 +36,16 @@
     @apply bg-[#23272f] text-[#f6f7f9];
   }
 }
+
+.categories_container {
+  overflow: hidden;
+  position: relative;
+}
+@media screen and (min-width: 992px) {
+  .categories_container:nth-child(2) {
+    grid-row: span 2 !important;
+  }
+  .categories_container:nth-child(6) {
+    grid-column: span 2 !important;
+  }
+}

@@ -12,8 +12,11 @@ const Products = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const { data, loading, error } = useFetch(`/categories`);
+  const { data, loading, error } = useFetch(
+    `/sub-categories?[filters][categories][id][$eq]=${catId}`
+  );
   // const { data, loading, error } = useFetch(
+  console.log("🚀 ~ file: Products.jsx:17 ~ Products ~ data", data);
   //   `/categories?filters[id][$eq]=${catId}`
   // );
   const [selectedCategories, setSelectedCategories] = useState([]);
