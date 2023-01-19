@@ -16,7 +16,6 @@ const Products = () => {
     `/sub-categories?[filters][categories][id][$eq]=${catId}`
   );
   // const { data, loading, error } = useFetch(
-  console.log("🚀 ~ file: Products.jsx:17 ~ Products ~ data", data);
   //   `/categories?filters[id][$eq]=${catId}`
   // );
   const [selectedCategories, setSelectedCategories] = useState([]);
@@ -37,7 +36,7 @@ const Products = () => {
       <div className="pb-5 px-10 sticky h-full top-10">
         <h1 className="text-xl font-bold py-5">Filters</h1>
         <div className="pt-5">
-          <h2 className="font-bold">Product Categories</h2>
+          <h2 className="font-bold">Categories</h2>
           {data.map((item, index) => {
             return (
               <div key={index} className="select-none">

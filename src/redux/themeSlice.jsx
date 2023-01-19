@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  mode: false,
+  mode: sessionStorage.getItem("mode") === "true" ? true : false || null,
 };
 
 const themeSlice = createSlice({
@@ -10,6 +10,7 @@ const themeSlice = createSlice({
   reducers: {
     toggleMode: (state) => {
       state.mode = !state.mode;
+      sessionStorage.setItem("mode", state.mode);
     },
   },
 });
